@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +27,7 @@ public class UserController {
 	
 	protected ObjectMapper mapper;//Convertir Json en un objeto
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/saveOrUpdate", method = RequestMethod.POST)
 	public RestResponse saveOrUpdate(@RequestBody String userJason) throws JsonParseException, JsonMappingException, IOException {
 		
@@ -42,6 +44,7 @@ public class UserController {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/getUsers", method = RequestMethod.GET)
 	public List<User> getUsers(){
 		
