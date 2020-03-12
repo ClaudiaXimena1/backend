@@ -52,6 +52,7 @@ public class UserController {
 		
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value="/deleteUser", method = RequestMethod.POST)
 	public void deleteUser(@RequestBody String userJason) throws Exception {
 		
